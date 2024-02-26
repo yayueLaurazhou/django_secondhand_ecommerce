@@ -1,0 +1,764 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- basic -->
+    <meta charset="utf-8" />
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <!-- site metas -->
+    <title>The Diagonal Alley Bargains</title>
+    <meta name="keywords" content="Second hand ecommerce platform" />
+    <meta name="author" content="Yayue Zhou" />
+    <!-- style css -->
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!--Bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- banner bg main start -->
+    <div class="banner_bg_main">
+      <!-- logo section start -->🪄
+      <div class="logo_section">
+        <div class="logo_container">
+              <div class="logo">
+                <h1 style="font-family:  Script MT, Brush Script Std, cursive; color: #f26522">🪄 The Diagonal Alley Bargains<h1>
+              </div>
+        </div>
+      </div>
+      <!-- logo section end -->
+      <!-- header section start -->
+      <div class="header_section">
+        <div class="container">
+          <div class="containt_main">
+             <div class="dropdown">
+               <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 All Category
+               </a>
+               <ul class="dropdown-menu">
+                 <li><a class="dropdown-item" href="#">Action</a></li>
+                 <li><a class="dropdown-item" href="#">Another action</a></li>
+                 <li><a class="dropdown-item" href="#">Something else here</a></li>
+               </ul>
+             </div>
+            <!-- language box start-->
+            <div class="lang_box dropdown">
+               <a
+                 href="#"
+                 title="Language"
+                 class="nav-link dropdown-toggle"
+                 data-bs-toggle="dropdown"
+                 aria-expanded="false"
+               >
+                 🇬🇧
+                 English
+               </a>
+               <div class="dropdown-menu">
+                 <a href="#" class="dropdown-item">
+                   🇨🇳
+                   中文
+                 </a>
+               </div>
+             </div>
+            <!-- language box end -->
+            <div class="main">
+              <!-- search bar and search button start-->
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search this blog"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-secondary"
+                    type="button"
+                    style="background-color: #f26522; border-color: #f26522"
+                  >
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                     </svg>
+                  </button>
+                </div>
+              </div>
+              <!-- search bar and search button end -->
+            </div>
+            <div class="header_box">
+              <div class="login_menu">
+                <ul>
+                  <li>
+                    <a href="#">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                      </svg>
+                      <span>Message</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                      </svg>
+                      <span>Cart</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                      </svg>
+                      <span>Login</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- header section end -->
+      <!-- banner section start -->
+      <div class="banner_section layout_padding">
+        <div class="container">
+          <div id="my_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <div class="col-sm-12">
+                    <h1 class="banner_taital">
+                      Moving away? <br/>Sell your items
+                    </h1>
+                    <div class="buynow_bt"><a href="#">Sell Now</a></div>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="col-sm-12">
+                    <h1 class="banner_taital">
+                      Need to shop? <br/>Get quality second hand here
+                    </h1>
+                    <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                  </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#my_slider"
+              data-bs-slide="prev"
+            >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#my_slider"
+              data-bs-slide="next"
+            >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- banner section end -->
+    </div>
+    <!-- banner bg main end -->
+    <!-- fashion section start -->
+    <div class="fashion_section">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <h1 class="fashion_taital" style="padding-top: 50px;">Man & Woman Fashion</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Man T -shirt</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/tshirt-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Man -shirt</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/dress-shirt-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Woman Scart</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/women-clothes-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h1 class="fashion_taital">Man & Woman Fashion</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Man T -shirt</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/tshirt-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Man -shirt</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/dress-shirt-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Woman Scart</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/women-clothes-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h2 class="fashion_taital">Man & Woman Fashion</h2>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Man T -shirt</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/tshirt-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Man -shirt</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/dress-shirt-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Woman Scart</h4>
+                      <p class="price_text">
+                        Price <span style="color: #262626">$ 30</span>
+                      </p>
+                      <div class="tshirt_img">
+                        <img src="images/women-clothes-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#main_slider"
+          role="button"
+          data-slide="prev"
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+       </svg>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#main_slider"
+          role="button"
+          data-slide="next"
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+       </svg>
+        </a>
+      </div>
+    </div>
+    <!-- fashion section end -->
+    <!-- electronic section start -->
+    <div class="fashion_section">
+      <div
+        id="electronic_main_slider"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <h1 class="fashion_taital">Electronic</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Laptop</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/laptop-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Mobile</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/mobile-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Computers</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/computer-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h1 class="fashion_taital">Electronic</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Laptop</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/laptop-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Mobile</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/mobile-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Computers</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/computer-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h1 class="fashion_taital">Electronic</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Laptop</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/laptop-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Mobile</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/mobile-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Computers</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="electronic_img">
+                        <img src="images/computer-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#electronic_main_slider"
+          role="button"
+          data-slide="prev"
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+       </svg>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#electronic_main_slider"
+          role="button"
+          data-slide="next"
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+         <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+       </svg>
+        </a>
+      </div>
+    </div>
+    <!-- electronic section end -->
+    <!-- jewellery  section start -->
+    <div class="jewellery_section">
+      <div
+        id="jewellery_main_slider"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <h1 class="fashion_taital">Jewellery Accessories</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Jumkas</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/jhumka-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Necklaces</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/neklesh-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Kangans</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/kangan-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h1 class="fashion_taital">Jewellery Accessories</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Jumkas</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/jhumka-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Necklaces</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/neklesh-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Kangans</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/kangan-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h1 class="fashion_taital">Jewellery Accessories</h1>
+              <div class="fashion_section_2">
+                <div class="row">
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Jumkas</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/jhumka-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Necklaces</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/neklesh-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-sm-4">
+                    <div class="box_main">
+                      <h4 class="shirt_text">Kangans</h4>
+                      <p class="price_text">
+                        Start Price <span style="color: #262626">$ 100</span>
+                      </p>
+                      <div class="jewellery_img">
+                        <img src="images/kangan-img.png" />
+                      </div>
+                      <div class="btn_main">
+                        <div class="buy_bt"><a href="#">Buy Now</a></div>
+                        <div class="seemore_bt"><a href="#">See More</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#jewellery_main_slider"
+          role="button"
+          data-slide="prev"
+        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+         <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+       </svg>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#jewellery_main_slider"
+          role="button"
+          data-slide="next"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+          </svg>
+        </a>
+        <div class="loader_main">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </div>
+    <!-- jewellery  section end -->
+    <!-- copyright section start -->
+    <div class="copyright_section">
+      <div class="container">
+        <p class="copyright_text">© 2024 Yayue, Zhou All Rights Reserved.</p>
+      </div>
+    </div>
+    <!-- copyright section end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
