@@ -390,7 +390,7 @@ a:hover {
 
 .box_main {
   width: 100%;
-  background-color: #ffffff;
+  backg und-color: #ffffff;
   height: auto;
   padding: 20px;
   box-shadow: 0px 0 30px 10px #f0f0f0;
@@ -464,18 +464,18 @@ a:hover {
   color: #f26522;
 }
 
-#main_slider a.carousel-control-next {
+#main_slider .carousel-control-next {
   right: 615px;
   top: 105%;
 }
 
-#main_slider a.carousel-control-prev {
+#main_slider .carousel-control-prev {
   left: 615px;
   top: 105%;
 }
 
-#main_slider .carousel-control-next,
-#main_slider .carousel-control-prev {
+#main_slider button.carousel-control-next,
+#main_slider button.carousel-control-prev {
   width: 55px;
   height: 55px;
   background-color: #30302e;

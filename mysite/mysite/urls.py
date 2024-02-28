@@ -16,10 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf import settings  # Make sure to import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("", include('mainPage.urls')),
+    # path("cart/", include('cart.urls')),
+    # path("chat/", include('chat.urls')),
+    path("product/", include('productDetails.urls')),
+    # path("user/", include('userProfile.urls')),
     path("admin/", admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -1,0 +1,80 @@
+{% extends 'main/base.html' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+        
+    <!--####################### Product Detail Starts Here ###################-->
+    <div class="container-fluid bg-white about-cover" style="padding: 50px;">
+        <div class="container">
+            <div class="row about-row">
+                <div class="col-md-5 p-5 text-center">
+                    <img src="{{product.image.url}}" alt="">
+                </div>
+                <div class="col-md-7">
+                    <h2>{{product.name}}</h2>
+                    <p>{{product.category}}</p>
+                    <b class="fs-3 py-4 text-danger">£ {{ product.price }}</b>
+                    <button type="button" class="btn btn-info" style="float: inline-end;">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                            </svg>
+                        </span>
+                        Add
+                    </button>
+                </div>
+            </div>
+            <div class="row product-detail" data-postcode="{{ product.location }}">
+               <h4>Product Detail</h4>
+                <p class="mb-3">{{ product.description }}</p>
+            </div>
+            <div id="map" style="height: 180px;"></div>
+    <!--####################### Similar Products Starts Here ###################-->
+            <div id="testimonial" class="service container-fluid px-4 py-5" style="background-color: #ace1af;">
+                <div class="container">
+                 <div class="section-title row mb-3">
+                    <h2 class="fw-bolder">See Similar Products</h2>
+                </div>
+                <div class="row mt-5">
+                    {% for item in related_items %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                       <div class="serv-cove shadow-md rounded bg-white p-3">
+                            <div class="prf row mb-3">
+                                <div class="col-3">
+                                    <img class="rounded-pill" src="{{item.image.url}}" alt="">
+                                </div>
+                                <div class="col-9 align-self-center">
+                                    <h6 class="mb-0 fw-bolder">{{item.name}}</h6>
+                                    <span>{{item.price}}</span>
+                                </div>
+                                <div class="seemore_bt"><a href="#">See More</a></div>
+                            </div>
+                       </div>
+                    </div>
+                    {% endfor %}
+                    
+                    <!-- <div class="col-lg-4 col-md-6 mb-4">
+                       <div class="serv-cove shadow-md rounded bg-white p-3">
+                            <div class="prf row mb-3">
+                                <div class="col-3">
+                                    <img class="rounded-pill" src="assets/images/testimonial/member-03.jpg" alt="">
+                                </div>
+                                <div class="col-9 align-self-center">
+                                    <h6 class="mb-0 fw-bolder">Jackson Daniel</h6>
+                                    <span>CEO Notitech</span>
+                                </div>
+                            </div>
+                            <div class="det text-center">
+                                <p class="fs-7 fst-italic">Sed lectus ante, pharetra in lacus sed, efficitur luctus elit. Suspendisse commodo felis dictum, tempor tortor a, dapibus tellus. Nam ornare felis ut arcu tristique luctus. Curabitur </p>
+                            </div>
+                       </div>
+                    </div>
+                     -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>    
+ {% endblock %}
