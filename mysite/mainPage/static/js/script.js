@@ -1,15 +1,17 @@
-document.addEventListener('DOMContentLoaded', getCoord)
+document.addEventListener('DOMContentLoaded', getCoord);
 
 
-getCoord(location){
+function getCoord(location){
     const product = document.querySelector(".product-detail");
     const postcode = product.getAttribute('data-postcode');
-    fetch(`https://api.postcodes.io/${postcode}`).then(
+    fetch(`https://api.postcodes.io/postcodes/${postcode}`).then(
         response => response.json()
     ).then(
         data => {
             if (data.status === 200) {
-                console.log(data.result);
+                const latitude =  data.result.latitude
+                const longitude = data.result.longitude
+                loadMap(latitude, longitude)
             } else {
                 console.error('Postcode not found');
             }
@@ -18,30 +20,28 @@ getCoord(location){
 }
 
 
-loadMap(position) {
-    const { latitude } = position.coords;
-    const { longitude } = position.coords;
-    // console.log(`https://www.google.pt/maps/@${latitude},${longitude}`);
+function loadMap(latitude, longitude) {
 
     const coords = [latitude, longitude];
 
-    this.map = L.map('map').setView(coords, this.#mapZoomLevel);
+    map = L.map('map').setView(coords,19);
 
     L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(this.map);
+    }).addTo(map);
 
     L.marker(coords)
-    .addTo(this.#map)
+    .addTo(map)
     .bindPopup(
         L.popup({
         maxWidth: 250,
         minWidth: 100,
         autoClose: false,
         closeOnClick: false,
-        className: `${workout.type}-popup`,
         })
+    ).setPopupContent(
+        "Collect here!"
     ).openPopup();
   }
 
