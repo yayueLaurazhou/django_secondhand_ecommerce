@@ -1,0 +1,109 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+            <!-- ##################### User information section #################### -->
+             <div class="container-fluid products big-padding pt-3">
+               <div class="container-xl">
+                   <div class="section-title row">
+                    {% if user.is_authenticated %}
+                        <h2 class="fs-1 fw-bolder warning">{{ user.username }}</h2>
+                        <h4>{{user.email}}</h4>
+                        <h6> Last login: {{ user.last_login }} </h6>
+                        
+                    </div>
+                    <button class="btn btn-warning" style="float: inline-end;"><a href="{% url 'userProfile:new' %}">Sell a new item</a></button>
+                    {% endif %}
+                </div>
+            </div>
+                  
+             <!-- ##################### Cart Starts Here #################### -->
+           <div class="container-fluid products big-padding px-3 py-5">
+               <div class="container-xl">
+                <h4>Your Cart</h4>
+                   <div class="row">
+                       <div class="col-lg-3 col-md-4 mb-4">
+                           <a href="detail.html">
+                           <div class="product bg-white p-4 text-center shadow-md">
+                               <img src="assets/images/products/p1.png" alt="">
+                                <div class="d-inline-block">
+                                   <h4 class="fw-bolder fs-5 mt-4">Manuka Honey</h4>
+                                   <span class="fw-bolder fs-4">85$</span>
+                               </div>
+                               <div class="d-inline-block mt-3">
+                                   <button class="btn btn-primary px-5">Buy Now</button>
+                               </div>
+                               
+                           </div>
+                           </a>
+                       </div>
+                       <div class="col-lg-3 col-md-4 mb-4">
+                           <a href="detail.html">
+                           <div class="product bg-white p-4 text-center shadow-md">
+                               <img src="assets/images/products/p2.png" alt="">
+                                <div class="d-inline-block">
+                                   <h4 class="fw-bolder fs-5 mt-4">Raw Honey</h4>
+                                   <span class="fw-bolder fs-4">85$</span> <span class="text-muted text-decoration-line-through">105$</span>
+                               </div>
+                               <div class="d-inline-block mt-3">
+                                   <button class="btn btn-primary px-5">Buy Now</button>
+                               </div>
+                               
+                           </div>
+                           </a>
+                       </div>
+                       <div class="col-lg-3 col-md-4 mb-4">
+                           <a href="detail.html">
+                           <div class="product bg-white p-4 text-center shadow-md">
+                               <img src="assets/images/products/p3.png" alt="">
+                                <div class="d-inline-block">
+                                   <h4 class="fw-bolder fs-5 mt-4">Wild Flower Honey</h4>
+                                   <span class="fw-bolder fs-4">85$</span> <span class="text-muted text-decoration-line-through">105$</span>
+                               </div>
+                               <div class="d-inline-block mt-3">
+                                   <button class="btn btn-primary px-5">Buy Now</button>
+                               </div>
+                               
+                           </div>
+                           </a>
+                       </div>
+                       <div class="col-lg-3 col-md-4 mb-4">
+                           <a href="detail.html">
+                           <div class="product bg-white p-4 text-center shadow-md">
+                               <img src="assets/images/products/p4.png" alt="">
+                                <div class="d-inline-block">
+                                   <h4 class="fw-bolder fs-5 mt-4">Queen Bee Honey</h4>
+                                   <span class="fw-bolder fs-4">85$</span> <span class="text-muted text-decoration-line-through">105$</span>
+                               </div>
+                               <div class="d-inline-block mt-3">
+                                   <button class="btn btn-primary px-5">Buy Now</button>
+                               </div>
+                               
+                           </div>
+                           </a>
+                       </div>
+                   </div>
+           </div>
+            
+             <!--########################## User's Item Starts Here ############################# -->
+            
+            <div id="blog" class="service container-fluid px-4 bg-white py-5">
+                <div class="container">
+                 <div class="section-title row mb-3">
+                    <h4>Your Item</h4>
+                </div>
+                <div class="row mt-5">
+                    {% for item in items %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                       <div class="serv-cove rounded bg-white p-2">
+                            <img src="{{ item.image.url }}" alt="">
+                            <div class="p-2">
+                                <h5 class="mt-3 fs-7 fw-bold">{{item.name}}</h5>
+                                <button type="button" class="btn btn-warning"><a href="{% url 'userProfile:edit' item.id %}">Edit</a></button>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </div>
+                       </div>
+                    </div>
+                    {% endfor %}  
+                </div>
+                </div>
+{% endblock %}

@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -41,4 +40,7 @@ def login_user(request):
     return render(request, 'main/login.html', {'form': form })
 
 def logout_user(request):
-    pass
+    logout(request)
+    messages.success(request, "You have been logged out!")
+    return redirect('mainPage:index')
+
