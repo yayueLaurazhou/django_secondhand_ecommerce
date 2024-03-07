@@ -7,5 +7,5 @@ urlpatterns = [
     path("profile/", views.profile, name="profile"),
     path("newitem/", views.new, name="new"),
     path("edit/<int:pk>/", views.edit, name="edit"),
-    path("delete/", views.delete, name="delete")
+    path("delete/<int:pk>", views.delete, name="delete")
 ]

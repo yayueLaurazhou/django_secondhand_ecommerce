@@ -23,7 +23,7 @@ def new(request):
             item.created_by = request.user
             item.save()
 
-            return redirect('ProductDetails:detail', pk=item.id)
+            return HttpResponseRedirect(reverse('productDetails:detail',  kwargs={'pk': item.id}))
     else:
         form = NewItemForm()
 
@@ -57,6 +57,7 @@ def edit(request, pk):
 def delete(request, pk):
     item = get_object_or_404(Product, pk=pk, created_by=request.user)
     item.delete()
+    items = Product.objects.filter(created_by=request.user)
     messages.success(request, ("Item successfully deleted!"))
 
-    return redirect('userProfile:profile')
+    return render(request, 'userProfile/profile.html', {'items': items})
