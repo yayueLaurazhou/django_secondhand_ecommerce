@@ -40,8 +40,8 @@
     <div class="banner_bg_main">
       <!-- logo section start -->
       <div class="logo_section">
-        <div class="logo_container mt-3">
-              <div class="logo">
+        <div class="logo_container">
+              <div class="logo mt-3">
                 <h1 style="font-family:  Script MT, Brush Script Std, cursive; color: #f26522">🪄 The Diagonal Alley Bargains<h1>
               </div>
         </div>
@@ -106,6 +106,18 @@
             <div class="header_box">
               <div class="login_menu">
                 <ul>
+                  <li>
+                    <a href="#" class="position-relative">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+                      </svg>
+                      <span class="position-absolute top-10 start-20 translate-middle badge rounded-pill bg-danger" id="cart-qty">
+                        1
+                        <span class="visually-hidden">unread messages</span>
+                      </span>
+                      <span>Cart</span>
+                    </a>
+                  </li>
                   {% if request.user.is_authenticated %}
                   <li>
                     <a href="#">
@@ -113,14 +125,6 @@
                         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
                       </svg>
                       <span>Message</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="#">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
-                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
-                      </svg>
-                      <span>Cart</span></a
                     >
                   </li>
                   <li>
@@ -226,7 +230,7 @@
                         <img src="{{ product.image.url }}" />
                       </div>
                       <div class="btn_main">
-                        <div class="buy_bt"><a href="#">Add</a></div>
+                        <div class="buy_bt"><a href="{% url 'cart:cart_add' %}">Add</a></div>
                         <div class="seemore_bt"><a href="{% url 'productDetails:detail' product.id %}">See More</a></div>
                       </div>
                     </div>
