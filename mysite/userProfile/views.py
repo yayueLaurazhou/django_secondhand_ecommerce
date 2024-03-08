@@ -6,10 +6,14 @@ from django.contrib import messages
 from mainPage.models import Product
 from .forms import NewItemForm, EditItemForm
 
+
 @login_required
 def profile(request):
     items = Product.objects.filter(created_by=request.user)
-    return render(request, 'userProfile/profile.html', {'items': items})
+    cart = request.session.get("session_key")
+    product_ids = cart.keys()
+    cart_items = Product.objects.filter(id__in=product_ids)
+    return render(request, 'userProfile/profile.html', {'items': items, 'cart_items':cart_items})
 
 
 

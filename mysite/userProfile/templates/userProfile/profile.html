@@ -8,10 +8,12 @@
                     {% if user.is_authenticated %}
                         <h2 class="fs-1 fw-bolder warning">{{ user.username }}</h2>
                         <h4>{{user.email}}</h4>
-                        <h6> Last login: {{ user.last_login }} </h6>
-                        
+                        <h6> Last login: {{ user.last_login }} </h6>  
                     </div>
-                    <button class="btn btn-warning" style="float: inline-end;"><a href="{% url 'userProfile:new' %}">Sell a new item</a></button>
+                    <div style="float: inline-end;">
+                        <button class="btn btn-warning"><a href="{% url 'userProfile:new' %}">Sell a new item</a></button>
+                        <button class="btn btn-danger" ><a href="{% url 'mainPage:logout' %}">LogOut</a></button>
+                    </div>
                     {% endif %}
                 </div>
             </div>
@@ -21,66 +23,19 @@
                <div class="container-xl">
                 <h4>Your Cart</h4>
                    <div class="row">
+                    {% for cart_item in cart_items %}
                        <div class="col-lg-3 col-md-4 mb-4">
-                           <a href="detail.html">
-                           <div class="product bg-white p-4 text-center shadow-md">
-                               <img src="assets/images/products/p1.png" alt="">
+                           <a href="{% url 'productDetails:detail' cart_item.id %}">
+                           <div class="product bg-white text-center shadow-md">
+                               <img src="{{ cart_item.image.url }}" alt="">
                                 <div class="d-inline-block">
-                                   <h4 class="fw-bolder fs-5 mt-4">Manuka Honey</h4>
-                                   <span class="fw-bolder fs-4">85$</span>
+                                   <h2 class="fw-bolder fs-5">{{ cart_item.name }}</h2>
+                                   <span class="fw-bolder fs-4">£ {{ cart_item.price }}</span>
                                </div>
-                               <div class="d-inline-block mt-3">
-                                   <button class="btn btn-primary px-5">Buy Now</button>
-                               </div>
-                               
                            </div>
                            </a>
                        </div>
-                       <div class="col-lg-3 col-md-4 mb-4">
-                           <a href="detail.html">
-                           <div class="product bg-white p-4 text-center shadow-md">
-                               <img src="assets/images/products/p2.png" alt="">
-                                <div class="d-inline-block">
-                                   <h4 class="fw-bolder fs-5 mt-4">Raw Honey</h4>
-                                   <span class="fw-bolder fs-4">85$</span> <span class="text-muted text-decoration-line-through">105$</span>
-                               </div>
-                               <div class="d-inline-block mt-3">
-                                   <button class="btn btn-primary px-5">Buy Now</button>
-                               </div>
-                               
-                           </div>
-                           </a>
-                       </div>
-                       <div class="col-lg-3 col-md-4 mb-4">
-                           <a href="detail.html">
-                           <div class="product bg-white p-4 text-center shadow-md">
-                               <img src="assets/images/products/p3.png" alt="">
-                                <div class="d-inline-block">
-                                   <h4 class="fw-bolder fs-5 mt-4">Wild Flower Honey</h4>
-                                   <span class="fw-bolder fs-4">85$</span> <span class="text-muted text-decoration-line-through">105$</span>
-                               </div>
-                               <div class="d-inline-block mt-3">
-                                   <button class="btn btn-primary px-5">Buy Now</button>
-                               </div>
-                               
-                           </div>
-                           </a>
-                       </div>
-                       <div class="col-lg-3 col-md-4 mb-4">
-                           <a href="detail.html">
-                           <div class="product bg-white p-4 text-center shadow-md">
-                               <img src="assets/images/products/p4.png" alt="">
-                                <div class="d-inline-block">
-                                   <h4 class="fw-bolder fs-5 mt-4">Queen Bee Honey</h4>
-                                   <span class="fw-bolder fs-4">85$</span> <span class="text-muted text-decoration-line-through">105$</span>
-                               </div>
-                               <div class="d-inline-block mt-3">
-                                   <button class="btn btn-primary px-5">Buy Now</button>
-                               </div>
-                               
-                           </div>
-                           </a>
-                       </div>
+                       {% endfor %}
                    </div>
            </div>
             
