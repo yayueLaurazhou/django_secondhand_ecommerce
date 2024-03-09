@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "mainPage.apps.EcommerceConfig",
     "productDetails",
     "userProfile",
-    "cart"
+    "cart",
+    "chat"
 ]
 
 MIDDLEWARE = [

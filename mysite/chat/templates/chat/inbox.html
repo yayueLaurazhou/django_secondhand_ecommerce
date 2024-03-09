@@ -6,12 +6,11 @@
 <div class="space-y-6">
     {% if conversations %}
         {% for conversation in conversations %}
-            <a href="{% url 'conversation:detail' conversation.id %}">
+            <a href="{% url 'chat:chat' conversation.id %}">
                 <div class="p-6 flex bg-gray-100 rounded-xl">
                     <div class="pr-6">
                         <img src="{{ conversation.item.image.url }}" class="w-20 rounded-xl">
                     </div>
-
                     <div>
                         {% for member in conversation.members.all %}
                             {% if member != request.user %}
