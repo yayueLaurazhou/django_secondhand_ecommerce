@@ -1,73 +1,76 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-<h1 class="mb-6 text-3xl">Conversation</h1>
+<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl" style="width: 20%;">
+    <h1 class="mb-6 text-3xl">Conversation</h1>
 
-<div class="space-y-6" id="display">
-    {% if conversation %}
-        {% for message in conversation.messages.all %}
-            <div class="p-6 flex {% if message.created_by == request.user %}bg-blue-100{% else %}bg-gray-100{% endif %} rounded-xl">
-                <div>
-                    <p class="mb-4"><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
-                    <p>{{ message.content }}</p>
+    <div class="space-y-6" id="display">
+        {% if conversation %}
+            {% for message in conversation.messages.all %}
+                <div class="p-6 flex {% if message.created_by == request.user %}bg-blue-100{% else %}bg-gray-100{% endif %} rounded-xl">
+                    <div>
+                        <p class="mb-4"><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
+                        <p>{{ message.content }}</p>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
-    {% endif %}
-</div>
-
-<form method="post" action="." class="mt-6">
-    {% csrf_token %}
-
-    <div class="space-y-4">
-        {{ form.as_p }}
+            {% endfor %}
+        {% endif %}
     </div>
 
-    {% if form.errors or form.non_field_errors %}
-        <div class="mb-3 p-6 bg-red-100 rounded-xl">
-            {% for field in form %}
-                {{ field.errors }}
-            {% endfor %}
+    <form method="post" action=".">
+        {% csrf_token %}
 
-            {{ form.non_field_errors }}
+        <div class="mb-3">
+            <label class="inline-block mb-2">Your Message:</label><br>
+            {{ form.content }}
         </div>
-    {% endif %}
 
-    <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Send</button>
-</form>
+        {% if form.errors or form.non_field_errors %}
+            <div class="mb-3 p-6 bg-red-100 rounded-xl">
+                {% for field in form %}
+                    {{ field.errors }}
+                {% endfor %}
+
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        <button class="btn btn-warning">Send</button>
+    </form>
+</div>
+
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-    setInterval(() => {
-        fetch("{% url 'chat:getMessages' %}")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data);
-                const messageElement = document.getElementById('display');
-                messageElement.innerHTML = ''; // Clear existing messages
-                for (let key in data.messages) {
-                    if (data.messages.hasOwnProperty(key)) {
-                        const message = data.messages[key];
-                        messageElement.innerHTML = 
-                        `<div class="p-6 flex ${message.created_by == request.user ? bg-blue-100 : bg-gray-100} rounded-xl">
-                            <div>           
-                            <p class="mb-4"><strong>${ message.created_by.username }</strong> @ ${ message.created_at }</p>
-                            <p>${ message.content }</p>
-                            </div>
-                        </div>`
-                        displayElement.appendChild(messageElement);
-                    }
-                }
-            })
-            .catch(error => {
-                alert('An error occurred');
-                console.error('Error:', error);
-            });
-    }, 1000);
-});
+//     document.addEventListener('DOMContentLoaded', (event) => {
+//     setInterval(() => {
+//         fetch("{% url 'chat:getMessages' %}")
+//             .then(response => {
+//                 if (!response.ok) {
+//                     throw new Error('Network response was not ok');
+//                 }
+//                 return response.json();
+//             })
+//             .then(data => {
+//                 console.log(data);
+//                 const messageElement = document.getElementById('display');
+//                 messageElement.innerHTML = ''; // Clear existing messages
+//                 for (let key in data.messages) {
+//                     if (data.messages.hasOwnProperty(key)) {
+//                         const message = data.messages[key];
+//                         messageElement.innerHTML = 
+//                         `<div class="p-6 flex ${message.created_by == request.user ? bg-blue-100 : bg-gray-100} rounded-xl">
+//                             <div>           
+//                             <p class="mb-4"><strong>${ message.created_by.username }</strong> @ ${ message.created_at }</p>
+//                             <p>${ message.content }</p>
+//                             </div>
+//                         </div>`
+//                         displayElement.appendChild(messageElement);
+//                     }
+//                 }
+//             })
+//             .catch(error => {
+//                 alert('An error occurred');
+//                 console.error('Error:', error);
+//             });
+//     }, 1000);
+// });
 </script>
 {% endblock %}

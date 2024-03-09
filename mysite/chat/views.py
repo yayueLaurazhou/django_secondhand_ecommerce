@@ -37,7 +37,7 @@ def new_chat(request, pk): #pk is the item id
             conversation_message.created_by = request.user
             conversation_message.save()
             messages.success(request, "Conversation saved!")
-            return redirect('chat:inbox', pk=item_pk)
+            return redirect('chat:inbox')
     else:
         form = MessageForm()
     
