@@ -58,10 +58,10 @@ def chat(request, pk): #pk is the converstaion id
 
                 conversation.save()
 
-                return redirect('chat:inbox', pk=pk)
-        else:
-            form = MessageForm()
-    return render(request, 'conversation/chat.html', {
+                return redirect('chat:inbox')
+    else:
+        form = MessageForm()
+    return render(request, 'chat/chat.html', {
         'conversation': conversation,
         'form': form
     })

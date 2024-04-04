@@ -3,24 +3,30 @@
 {% block content %}
 <h1 class="mb-6 text-3xl">Inbox</h1>
 
-<div class="space-y-6">
+<div class="container">
     {% if conversations %}
         {% for conversation in conversations %}
-            <a href="{% url 'chat:chat' conversation.id %}">
-                <div class="p-6 flex bg-gray-100 rounded-xl">
-                    <div class="pr-6">
+        <a href="{% url 'chat:chat' conversation.id %}">
+            <div class="row mb-4 border" style="width: 50%;">
+                    <div class="col-md-3 col-lg-2 order-md-first bg-light">
                         <img src="{{ conversation.item.image.url }}" class="w-20 rounded-xl">
                     </div>
-                    <div>
-                        {% for member in conversation.members.all %}
-                            {% if member != request.user %}
-                                <p class="mb-4">Your chat with<strong>{{ member.username }}</strong> | {{ conversation.modified_at }}</p>
-                                <p>{{ conversation.item.name }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </a>
+                    {% for member in conversation.members.all %}
+                        {% if member != request.user %}
+                            <div class="col-md-9 col-lg-10 ps-md-3 ps-lg-10">
+                                <div class="col">
+                                <div class="row p-3">
+                                    <div class="col-12">
+                                        <h5 class="mb-4">Your chat with  <strong>{{ member.username }}</strong> | {{ conversation.modified_at }}</h5>
+                                        <h5>{{ conversation.item.name }}</h5>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+        </a>
         {% endfor %}
     {% else %}
         <p style="text-align: center;"> No conversations yet...</p>
