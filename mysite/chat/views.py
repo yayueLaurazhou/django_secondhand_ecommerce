@@ -58,7 +58,7 @@ def chat(request, pk): #pk is the converstaion id
 
                 conversation.save()
 
-                return redirect('chat:chat')
+                # return redirect('chat:chat')
     else:
         form = MessageForm()
     return render(request, 'chat/chat.html', {
@@ -68,7 +68,7 @@ def chat(request, pk): #pk is the converstaion id
 
 #In the template, using this method to set interval and display all the messages real time, without refreshing
 def getMessages(request, pk):
-    the_chat = Conversation.objects.get(pk=pk)
-
+    item = get_object_or_404(Product, pk=pk)
+    the_chat = Conversation.objects.get(item=item)
     messages = Message.objects.filter(conversation=the_chat)
-    return JsonResponse({"messages":list(messages.content)})
+    return JsonResponse ({"messages" : [{"content": message.content, "time": message.created_at, "user": message.created_by.username} for message in messages]})

@@ -7,7 +7,7 @@
     <div class="space-y-6" id="display">
         {% if conversation %}
             {% for message in conversation.messages.all %}
-                <div class="p-6 {% if message.created_by == request.user %}bg-blue-100{% else %}bg-gray-100{% endif %} rounded-xl">
+                <div class="p-6 rounded-xl">
                     <div>
                         <p><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
                         <p>{{ message.content }}</p>
@@ -38,10 +38,10 @@
     </form>
 </div>
 
-<!-- <script>
+<script>
     document.addEventListener('DOMContentLoaded', (event) => {
     setInterval(() => {
-        fetch("{% url 'chat:getMessages' %}")
+        fetch("{% url 'chat:getMessages' conversation.item.id %}")
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -49,28 +49,23 @@
                 return response.json();
             })
             .then(data => {
-                console.log(data);
                 const messageElement = document.getElementById('display');
                 messageElement.innerHTML = ''; // Clear existing messages
                 for (let key in data.messages) {
-                    if (data.messages.hasOwnProperty(key)) {
-                        const message = data.messages[key];
-                        messageElement.innerHTML = 
-                        `<div class="p-6 flex ${message.created_by == request.user ? bg-blue-100 : bg-gray-100} rounded-xl">
-                            <div>           
-                            <p class="mb-4"><strong>${ message.created_by.username }</strong> @ ${ message.created_at }</p>
-                            <p>${ message.content }</p>
-                            </div>
-                        </div>`
-                        displayElement.appendChild(messageElement);
-                    }
+                        const message = data.messages[key]
+                        messageElement.insertAdjacentHTML('beforeend',
+                            `<div class="p-6 flex rounded-xl">        
+                                <p class="mb-4"><strong>${ message.user }</strong> @ ${ message.time }</p>
+                                <p>${ message.content }</p>
+                            </div>`
+                        )
                 }
             })
             .catch(error => {
-                alert('An error occurred');
+                console.log(error)
                 console.error('Error:', error);
             });
     }, 1000);
 });
-</script> -->
+</script>
 {% endblock %}
