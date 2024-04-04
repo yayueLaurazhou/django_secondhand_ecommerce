@@ -1,15 +1,15 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl" style="width: 20%;">
+<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl" style="width: 80%;">
     <h1 class="mb-6 text-3xl">Conversation</h1>
 
     <div class="space-y-6" id="display">
         {% if conversation %}
             {% for message in conversation.messages.all %}
-                <div class="p-6 flex {% if message.created_by == request.user %}bg-blue-100{% else %}bg-gray-100{% endif %} rounded-xl">
+                <div class="p-6 {% if message.created_by == request.user %}bg-blue-100{% else %}bg-gray-100{% endif %} rounded-xl">
                     <div>
-                        <p class="mb-4"><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
+                        <p><strong>{{ message.created_by.username }}</strong> @ {{ message.created_at }}</p>
                         <p>{{ message.content }}</p>
                     </div>
                 </div>

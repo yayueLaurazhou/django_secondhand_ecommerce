@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse, HttpResponseRedirect
+from django.http import JsonResponse, HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 from django.urls import reverse
 from chat.models import Conversation,Message
@@ -58,7 +58,7 @@ def chat(request, pk): #pk is the converstaion id
 
                 conversation.save()
 
-                return redirect('chat:inbox')
+                return redirect('chat:chat')
     else:
         form = MessageForm()
     return render(request, 'chat/chat.html', {
