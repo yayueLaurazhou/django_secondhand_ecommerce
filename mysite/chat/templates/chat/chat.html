@@ -17,7 +17,7 @@
         {% endif %}
     </div>
 
-    <form method="post" action=".">
+    <form method="POST" action="./{{item_id}}">
         {% csrf_token %}
 
         <div class="mb-3">
@@ -34,43 +34,43 @@
                 {{ form.non_field_errors }}
             </div>
         {% endif %}
-        <button class="btn btn-warning">Send</button>
+        <input type="submit" value="Send" class="btn btn-warning">
     </form>
 </div>
 
-<script>
-//     document.addEventListener('DOMContentLoaded', (event) => {
-//     setInterval(() => {
-//         fetch("{% url 'chat:getMessages' %}")
-//             .then(response => {
-//                 if (!response.ok) {
-//                     throw new Error('Network response was not ok');
-//                 }
-//                 return response.json();
-//             })
-//             .then(data => {
-//                 console.log(data);
-//                 const messageElement = document.getElementById('display');
-//                 messageElement.innerHTML = ''; // Clear existing messages
-//                 for (let key in data.messages) {
-//                     if (data.messages.hasOwnProperty(key)) {
-//                         const message = data.messages[key];
-//                         messageElement.innerHTML = 
-//                         `<div class="p-6 flex ${message.created_by == request.user ? bg-blue-100 : bg-gray-100} rounded-xl">
-//                             <div>           
-//                             <p class="mb-4"><strong>${ message.created_by.username }</strong> @ ${ message.created_at }</p>
-//                             <p>${ message.content }</p>
-//                             </div>
-//                         </div>`
-//                         displayElement.appendChild(messageElement);
-//                     }
-//                 }
-//             })
-//             .catch(error => {
-//                 alert('An error occurred');
-//                 console.error('Error:', error);
-//             });
-//     }, 1000);
-// });
-</script>
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    setInterval(() => {
+        fetch("{% url 'chat:getMessages' %}")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                const messageElement = document.getElementById('display');
+                messageElement.innerHTML = ''; // Clear existing messages
+                for (let key in data.messages) {
+                    if (data.messages.hasOwnProperty(key)) {
+                        const message = data.messages[key];
+                        messageElement.innerHTML = 
+                        `<div class="p-6 flex ${message.created_by == request.user ? bg-blue-100 : bg-gray-100} rounded-xl">
+                            <div>           
+                            <p class="mb-4"><strong>${ message.created_by.username }</strong> @ ${ message.created_at }</p>
+                            <p>${ message.content }</p>
+                            </div>
+                        </div>`
+                        displayElement.appendChild(messageElement);
+                    }
+                }
+            })
+            .catch(error => {
+                alert('An error occurred');
+                console.error('Error:', error);
+            });
+    }, 1000);
+});
+</script> -->
 {% endblock %}

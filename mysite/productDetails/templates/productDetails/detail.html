@@ -1,7 +1,5 @@
 {% extends 'main/base.html' %}
 
-{% block title %}{{ product.name }}{% endblock %}
-
 {% block content %}
         
     <!--####################### Product Detail Starts Here ###################-->
@@ -73,6 +71,8 @@
         </div>
     </div>
     </div>
+    {% load static %}
+    <script src="{% static 'js/script.js' %}"></script>   
     <script>
         function getCookie(name) {
             let cookieValue = null;
@@ -113,5 +113,5 @@
                 console.error('There was a problem with the fetch operation:', error);
             });
         })
-    </script>    
+    </script> 
  {% endblock %}

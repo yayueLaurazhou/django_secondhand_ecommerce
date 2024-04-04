@@ -1,8 +1,9 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib import messages
-from .models import Conversation,Message
+from django.urls import reverse
+from chat.models import Conversation,Message
 from mainPage.models import Product
 from .forms import MessageForm
 
@@ -25,7 +26,6 @@ def new_chat(request, pk): #pk is the item id
 
     if request.method == 'POST':
         form = MessageForm(request.POST)
-
         if form.is_valid():
             conversation = Conversation.objects.create(item=item)
             conversation.members.add(request.user)
@@ -37,12 +37,12 @@ def new_chat(request, pk): #pk is the item id
             conversation_message.created_by = request.user
             conversation_message.save()
             messages.success(request, "Conversation saved!")
-            return redirect('chat:inbox')
+            return HttpResponseRedirect(reverse('chat:inbox'))
     else:
         form = MessageForm()
     
     return render(request, 'chat/chat.html', {
-        'form': form
+        'form': form, 'item_id':pk
     })
 
 @login_required
