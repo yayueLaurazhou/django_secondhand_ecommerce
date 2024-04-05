@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-2&76foa2#7@jje3#zt8g@4)t4qb@u15qnr!1sze9toha#3__bw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,13 +84,10 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("DB_NAME"),
-        'USER':  os.environ.get("DB_USER"),
-        'HOST': os.environ.get("DB_HOST"),
-        'PORT': os.environ.get("DB_PORT")
-    }
+     "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+     }
 }
 
 
