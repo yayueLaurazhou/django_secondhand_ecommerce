@@ -28,8 +28,8 @@
                            <a href="{% url 'productDetails:detail' cart_item.id %}">
                            <div class="product bg-white text-center shadow-md">
                                <img src="{{ cart_item.image.url }}" alt="">
-                                <div class="d-inline-block">
-                                   <h2 class="fw-bolder fs-5">{{ cart_item.name }}</h2>
+                                <div class="pt-3">
+                                   <h4 class="fw-bolder fs-5">{{ cart_item.name }}</h4>
                                    <span class="fw-bolder fs-4">£ {{ cart_item.price }}</span>
                                </div>
                            </div>

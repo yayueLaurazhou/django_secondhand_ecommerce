@@ -176,7 +176,12 @@
                     <h1 class="banner_taital">
                       Moving away? <br/>Sell your items
                     </h1>
-                    <div class="buynow_bt"><a href="#">Sell Now</a></div>
+
+                    {% if request.user.is_authenticated %}
+                    <div class="buynow_bt"><a href="{% url 'userProfile:new' %}">Sell Now</a></div>
+                    {% else %}
+                    <div class="buynow_bt"><a href="{% url 'mainPage:login' %}">Sell Now</a></div>
+                    {% endif %}
                   </div>
               </div>
               <div class="carousel-item">
@@ -184,7 +189,7 @@
                     <h1 class="banner_taital">
                       Need to shop? <br/>Get quality second hand here
                     </h1>
-                    <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                    <div class="buynow_bt"><a href="{% url 'mainPage:login' %}">Buy Now</a></div>
                   </div>
               </div>
             </div>
